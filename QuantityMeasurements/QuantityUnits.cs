@@ -22,6 +22,16 @@ namespace QuantityMeasurements
         }
 
         /// <summary>
+        /// This method add the quantity value.
+        /// </summary>
+        /// <param name="quantityUnits">Quantity object.</param>
+        /// <returns>Addition of quantity.</returns>
+        public double AddQuantity(QuantityUnits quantityUnits)
+        {
+            return quantityUnits.quantity + this.quantity;
+        }
+
+        /// <summary>
         /// This is equals method for compare objects.
         /// </summary>
         /// <param name="obj">Units object.</param>

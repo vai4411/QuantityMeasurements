@@ -12,12 +12,23 @@ namespace QuantityMeasurements
         /// <summary>
         /// This method used for check Units objects same or not.
         /// </summary>
-        /// <param name="firstQuantity">Units of length.</param>
-        /// <param name="lastQuantity"><see cref="QuantityUnits"/> of length.</param>
+        /// <param name="firstQuantity">Unit of quantity.</param>
+        /// <param name="secondQuantity"><see cref="QuantityUnits"/>Unit of quantity.</param>
         /// <returns>Boolean result.</returns>
-        public bool EqualtyCheck(QuantityUnits firstQuantity, QuantityUnits lastQuantity)
+        public bool EqualtyCheck(QuantityUnits firstQuantity, QuantityUnits secondQuantity)
         {
-            return firstQuantity.Equals(lastQuantity);
+            return firstQuantity.Equals(secondQuantity);
+        }
+
+        /// <summary>
+        /// This method add the quantity value.
+        /// </summary>
+        /// <param name="firstQuantity">Unit of quantity.</param>
+        /// <param name="secondQuantity">Unit of quantity.</param>
+        /// <returns>Addition of quantity.</returns>
+        public double AddQuantityUnits(QuantityUnits firstQuantity, QuantityUnits secondQuantity)
+        {
+            return firstQuantity.AddQuantity(secondQuantity);
         }
     }
 }
