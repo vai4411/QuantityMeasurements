@@ -27,8 +27,8 @@ namespace QuantityMeasurementTest
         public void GivenQuantity_WhenZeroFeetCompareWithZeroFeet_ThenReturnTrue()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.FEET, 0);
-            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.FEET, 0);
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), 0);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), 0);
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsTrue(result);
         }
@@ -40,7 +40,7 @@ namespace QuantityMeasurementTest
         public void GivenQuantity_WhenNullCompareWithZeroFeet_ShouldReturnFalse()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.FEET, 0);
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), 0);
             QuantityUnits unit2 = null;
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsFalse(result);
@@ -53,7 +53,7 @@ namespace QuantityMeasurementTest
         public void GivenQuantity_WhenFeetRefCompareWithSameFeetRef_ShouldReturnTrue()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit = new QuantityUnits((double)UnitConversion.FEET, 0);
+            QuantityUnits unit = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), 0);
             bool result = quantityMeasurement.EqualtyCheck(unit, unit);
             Assert.IsTrue(result);
         }
@@ -65,8 +65,8 @@ namespace QuantityMeasurementTest
         public void GivenQuantity_WhenFeetTypeCompareWithFeetType_ShouldReturnTrue()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.FEET, 0);
-            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.FEET, 0);
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), 0);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), 0);
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsTrue(result);
         }
@@ -78,8 +78,8 @@ namespace QuantityMeasurementTest
         public void GivenQuantity_WhenTenFeetValueCompareWithTenFeetValue_ShouldReturnTrue()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.FEET, 10);
-            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.FEET, 10);
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), 10);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), 10);
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsTrue(result);
         }
@@ -91,8 +91,8 @@ namespace QuantityMeasurementTest
         public void GivenQuantity_WhenTenFeetValueCompareWithZeroFeetValue_ShouldReturnFalse()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.FEET, 10);
-            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.FEET, 0);
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), 10);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), 0);
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsFalse(result);
         }
@@ -104,8 +104,8 @@ namespace QuantityMeasurementTest
         public void GivenQuantity_WhenZeroInchCompareWithZeroInch_ThenReturnTrue()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.INCH, 0);
-            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.INCH, 0);
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 0);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 0);
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsTrue(result);
         }
@@ -117,7 +117,7 @@ namespace QuantityMeasurementTest
         public void GivenQuantity_WhenNullCompareWithZeroInch_ShouldReturnFalse()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.INCH, 0);
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 0);
             QuantityUnits unit2 = null;
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsFalse(result);
@@ -130,7 +130,7 @@ namespace QuantityMeasurementTest
         public void GivenQuantity_WhenInchRefCompareWithSameInchRef_ShouldReturnTrue()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit = new QuantityUnits((double)UnitConversion.INCH, 0);
+            QuantityUnits unit = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 0);
             bool result = quantityMeasurement.EqualtyCheck(unit, unit);
             Assert.IsTrue(result);
         }
@@ -142,8 +142,8 @@ namespace QuantityMeasurementTest
         public void GivenQuantity_WhenInchTypeCompareWithInchType_ShouldReturnTrue()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.INCH, 0);
-            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.INCH, 0);
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 0);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 0);
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsTrue(result);
         }
@@ -155,8 +155,8 @@ namespace QuantityMeasurementTest
         public void GivenQuantity_WhenTenInchValueCompareWithTenInchValue_ShouldReturnTrue()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.INCH, 10);
-            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.INCH, 10);
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 10);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 10);
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsTrue(result);
         }
@@ -168,8 +168,8 @@ namespace QuantityMeasurementTest
         public void GivenQuantity_WhenTenInchValueCompareWithZeroInchValue_ShouldReturnFalse()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.INCH, 10);
-            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.INCH, 0);
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 10);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 0);
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsFalse(result);
         }
@@ -181,8 +181,8 @@ namespace QuantityMeasurementTest
         public void GivenQuantity_WhenZeroFeetValueCompareWithZeroFeetValue_ShouldReturnTrue()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.FEET, 0);
-            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.INCH, 0);
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), 0);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 0);
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsTrue(result);
         }
@@ -194,8 +194,8 @@ namespace QuantityMeasurementTest
         public void GivenQuantity_WhenOneFeetValueCompareWithOneInchValue_ShouldReturnFalse()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.FEET, 1);
-            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.INCH, 1);
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), 1);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 1);
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsFalse(result);
         }
@@ -207,8 +207,8 @@ namespace QuantityMeasurementTest
         public void GivenQuantity_WhenOneInchValueCompareWithOneFeetValue_ShouldReturnFalse()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.INCH, 1);
-            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.FEET, 1);
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 1);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), 1);
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsFalse(result);
         }
@@ -220,8 +220,8 @@ namespace QuantityMeasurementTest
         public void GivenQuantity_WhenOneFeetValueCompareWithTwelveInchValue_ShouldReturnTrue()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.FEET, 1);
-            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.INCH, 12);
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), 1);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 12);
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsTrue(result);
         }
@@ -233,8 +233,8 @@ namespace QuantityMeasurementTest
         public void GivenQuantity_WhenTwelveInchValueCompareWithOneFeetValue_ShouldReturnTrue()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.INCH, 12);
-            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.FEET, 1);
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 12);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), 1);
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsTrue(result);
         }
@@ -246,8 +246,8 @@ namespace QuantityMeasurementTest
         public void GivenQuantity_WhenThreeFeetValueCompareWithOneYardValue_ShouldReturnTrue()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.FEET, 3);
-            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.YARD, 1);
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), 3);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.YARD), 1);
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsTrue(result);
         }
@@ -259,8 +259,8 @@ namespace QuantityMeasurementTest
         public void GivenQuantity_WhenOneFeetValueCompareWithOneYardValue_ShouldReturnFalse()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.FEET, 1);
-            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.YARD, 1);
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), 1);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.YARD), 1);
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsFalse(result);
         }
@@ -272,8 +272,8 @@ namespace QuantityMeasurementTest
         public void GivenQuantity_WhenOneInchValueCompareWithOneYardValue_ShouldReturnFalse()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.INCH, 1);
-            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.YARD, 1);
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 1);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.YARD), 1);
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsFalse(result);
         }
@@ -285,8 +285,8 @@ namespace QuantityMeasurementTest
         public void GivenQuantity_WhenOneyardValueCompareWithThirtySixInchValue_ShouldReturnTrue()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.YARD, 1);
-            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.INCH, 36);
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.YARD), 1);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 36);
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsTrue(result);
         }
@@ -298,21 +298,34 @@ namespace QuantityMeasurementTest
         public void GivenQuantity_WhenThirtySixInchValueCompareWithOneYardValue_ShouldReturnTrue()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.INCH, 36);
-            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.YARD, 1);
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 36);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.YARD), 1);
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsTrue(result);
         }
 
         /// <summary>
-        /// TC 1.22- comparison check for one yard and three feet.
+        /// TC 1.23- comparison check for one yard and three feet.
         /// </summary>
         [Test]
         public void GivenQuantity_WhenOneYardValueCompareWithThreeFeetValue_ShouldReturnTrue()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.YARD, 1);
-            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.FEET, 3);
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.YARD), 1);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), 3);
+            bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
+            Assert.IsTrue(result);
+        }
+
+        /// <summary>
+        /// TC 1.24- comparison check for two inch and five cm.
+        /// </summary>
+        [Test]
+        public void GivenQuantity_WhenTwoInchValueCompareWithFiveCMValue_ShouldReturnTrue()
+        {
+            QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 2);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.CM), 5);
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsTrue(result);
         }
