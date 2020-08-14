@@ -419,5 +419,21 @@ namespace QuantityMeasurementTest
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsTrue(result);
         }
+
+        /// <summary>
+        /// TC 1.31- comparison check for seven point fifty six inch with addition of one gallon tree point seventy eight litre.
+        /// </summary>
+        [Test]
+        public void GivenQuantity_WhenSevenPointFiftySixInchValueCompareWithAdditionOfOneGallonAndThreePointSeventyEightLitreValue_ShouldReturnTrue()
+        {
+            QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.GALLON), 1);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.LITRE), 3.78);
+            QuantityUnits unit3 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 7.56);
+            double unit4 = quantityMeasurement.AddQuantityUnits(unit1, unit2);
+            QuantityUnits unit5 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), unit4);
+            bool result = quantityMeasurement.EqualtyCheck(unit3, unit5);
+            Assert.IsTrue(result);
+        }
     }
 }
