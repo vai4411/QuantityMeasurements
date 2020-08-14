@@ -1,0 +1,9 @@
+C:\Users\Vaibhav\source\repos\QuantityMeasurements\QuantityMeasurements\bin\Debug\netstandard2.0\QuantityMeasurements.deps.json
+C:\Users\Vaibhav\source\repos\QuantityMeasurements\QuantityMeasurements\bin\Debug\netstandard2.0\QuantityMeasurements.dll
+C:\Users\Vaibhav\source\repos\QuantityMeasurements\QuantityMeasurements\bin\Debug\netstandard2.0\QuantityMeasurements.pdb
+C:\Users\Vaibhav\source\repos\QuantityMeasurements\QuantityMeasurements\obj\Debug\netstandard2.0\QuantityMeasurements.csprojAssemblyReference.cache
+C:\Users\Vaibhav\source\repos\QuantityMeasurements\QuantityMeasurements\obj\Debug\netstandard2.0\QuantityMeasurements.AssemblyInfoInputs.cache
+C:\Users\Vaibhav\source\repos\QuantityMeasurements\QuantityMeasurements\obj\Debug\netstandard2.0\QuantityMeasurements.AssemblyInfo.cs
+C:\Users\Vaibhav\source\repos\QuantityMeasurements\QuantityMeasurements\obj\Debug\netstandard2.0\QuantityMeasurements.csproj.CoreCompileInputs.cache
+C:\Users\Vaibhav\source\repos\QuantityMeasurements\QuantityMeasurements\obj\Debug\netstandard2.0\QuantityMeasurements.dll
+C:\Users\Vaibhav\source\repos\QuantityMeasurements\QuantityMeasurements\obj\Debug\netstandard2.0\QuantityMeasurements.pdb
