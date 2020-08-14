@@ -440,7 +440,7 @@ namespace QuantityMeasurementTest
         /// TC 1.32- comparison check for two litre with addition of one litre and thousand litre.
         /// </summary>
         [Test]
-        public void GivenQuantity_WhenSevenPointFiftySixInchValueCompareWithAdditionOfOneGallonAndThreePointSeventyEightLitreValue_ShouldReturnTrue()
+        public void GivenQuantity_WhenSevenPointFiftySixLitreValueCompareWithAdditionOfOneGallonAndThousandLitreValue_ShouldReturnTrue()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
             QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.ML), 1000);
@@ -475,6 +475,22 @@ namespace QuantityMeasurementTest
             QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.TONNE), 1);
             QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.KG), 1000);
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
+            Assert.IsTrue(result);
+        }
+
+        /// <summary>
+        /// TC 1.35- comparison check for one thousand one kg with addition of one tonne and thousand gm.
+        /// </summary>
+        [Test]
+        public void GivenQuantity_WhenOneThousandOneKGValueCompareWithAdditionOfOneTonneAndThousandGMValue_ShouldReturnTrue()
+        {
+            QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.TONNE), 1);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.GM), 1000);
+            QuantityUnits unit3 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.KG), 1001);
+            double unit4 = quantityMeasurement.AddQuantityUnits(unit1, unit2);
+            QuantityUnits unit5 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.LITRE), unit4);
+            bool result = quantityMeasurement.EqualtyCheck(unit3, unit5);
             Assert.IsTrue(result);
         }
     }
