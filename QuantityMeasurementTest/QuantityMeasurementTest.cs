@@ -421,17 +421,33 @@ namespace QuantityMeasurementTest
         }
 
         /// <summary>
-        /// TC 1.31- comparison check for seven point fifty six inch with addition of one gallon tree point seventy eight litre.
+        /// TC 1.31- comparison check for seven point fifty six litre with addition of one gallon and tree point seventy eight litre.
+        /// </summary>
+        [Test]
+        public void GivenQuantity_WhenSevenPointFiftySixLitreValueCompareWithAdditionOfOneGallonAndThreePointSeventyEightLitreValue_ShouldReturnTrue()
+        {
+            QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.GALLON), 1);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.LITRE), 3.78);
+            QuantityUnits unit3 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.LITRE), 7.56);
+            double unit4 = quantityMeasurement.AddQuantityUnits(unit1, unit2);
+            QuantityUnits unit5 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.LITRE), unit4);
+            bool result = quantityMeasurement.EqualtyCheck(unit3, unit5);
+            Assert.IsTrue(result);
+        }
+
+        /// <summary>
+        /// TC 1.32- comparison check for two litre with addition of one litre and thousand litre.
         /// </summary>
         [Test]
         public void GivenQuantity_WhenSevenPointFiftySixInchValueCompareWithAdditionOfOneGallonAndThreePointSeventyEightLitreValue_ShouldReturnTrue()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
-            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.GALLON), 1);
-            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.LITRE), 3.78);
-            QuantityUnits unit3 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 7.56);
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.ML), 1000);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.LITRE), 1);
+            QuantityUnits unit3 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.LITRE), 2);
             double unit4 = quantityMeasurement.AddQuantityUnits(unit1, unit2);
-            QuantityUnits unit5 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), unit4);
+            QuantityUnits unit5 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.LITRE), unit4);
             bool result = quantityMeasurement.EqualtyCheck(unit3, unit5);
             Assert.IsTrue(result);
         }
