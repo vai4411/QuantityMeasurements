@@ -334,12 +334,28 @@ namespace QuantityMeasurementTest
         /// TC 1.25- comparison check for four inch with addition of two inch and two inch.
         /// </summary>
         [Test]
-        public void GivenQuantity_WhenFourIchValueCompareWithAdditionOfTwoInchAndTwoInchValue_ShouldReturnTrue()
+        public void GivenQuantity_WhenFourInchValueCompareWithAdditionOfTwoInchAndTwoInchValue_ShouldReturnTrue()
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
             QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 2);
             QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 2);
             QuantityUnits unit3 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 4);
+            double unit4 = quantityMeasurement.AddQuantityUnits(unit1, unit2);
+            QuantityUnits unit5 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), unit4);
+            bool result = quantityMeasurement.EqualtyCheck(unit3, unit5);
+            Assert.IsTrue(result);
+        }
+
+        /// <summary>
+        /// TC 1.26- comparison check for fourteen inch with addition of one feet and two inch.
+        /// </summary>
+        [Test]
+        public void GivenQuantity_WhenFourteenInchValueCompareWithAdditionOfOneFeetAndTwoInchValue_ShouldReturnTrue()
+        {
+            QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), 1);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 2);
+            QuantityUnits unit3 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 14);
             double unit4 = quantityMeasurement.AddQuantityUnits(unit1, unit2);
             QuantityUnits unit5 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), unit4);
             bool result = quantityMeasurement.EqualtyCheck(unit3, unit5);
