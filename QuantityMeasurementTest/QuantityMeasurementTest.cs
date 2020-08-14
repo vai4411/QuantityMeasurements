@@ -251,5 +251,18 @@ namespace QuantityMeasurementTest
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsTrue(result);
         }
+
+        /// <summary>
+        /// TC 1.18- comparison check for one feet and one yard.
+        /// </summary>
+        [Test]
+        public void GivenQuantity_WhenOneFeetValueCompareWithOneYardValue_ShouldReturnFalse()
+        {
+            QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.FEET, 1);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.YARD, 1);
+            bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
+            Assert.IsTrue(result);
+        }
     }
 }
