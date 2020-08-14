@@ -173,5 +173,83 @@ namespace QuantityMeasurementTest
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsFalse(result);
         }
+
+        /// <summary>
+        /// TC 1.13- comparison check for zero feet and zero inch.
+        /// </summary>
+        [Test]
+        public void GivenQuantity_WhenZeroFeetValueCompareWithZeroFeetValue_ShouldReturnTrue()
+        {
+            QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.FEET, 0);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.INCH, 0);
+            bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
+            Assert.IsTrue(result);
+        }
+
+        /// <summary>
+        /// TC 1.14- comparison check for one feet and one inch.
+        /// </summary>
+        [Test]
+        public void GivenQuantity_WhenOneFeetValueCompareWithOneInchValue_ShouldReturnFalse()
+        {
+            QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.FEET, 1);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.INCH, 1);
+            bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
+            Assert.IsFalse(result);
+        }
+
+        /// <summary>
+        /// TC 1.15- comparison check for one feet and one inch.
+        /// </summary>
+        [Test]
+        public void GivenQuantity_WhenOneInchValueCompareWithOneFeetValue_ShouldReturnFalse()
+        {
+            QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.INCH, 1);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.FEET, 1);
+            bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
+            Assert.IsFalse(result);
+        }
+
+        /// <summary>
+        /// TC 1.16- comparison check for one feet and twelve inch.
+        /// </summary>
+        [Test]
+        public void GivenQuantity_WhenOneFeetValueCompareWithTwelveInchValue_ShouldReturnTrue()
+        {
+            QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.FEET, 1);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.INCH, 12);
+            bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
+            Assert.IsTrue(result);
+        }
+
+        /// <summary>
+        /// TC 1.17- comparison check for twelve inch and one feet.
+        /// </summary>
+        [Test]
+        public void GivenQuantity_WhenTwelveInchValueCompareWithOneFeetValue_ShouldReturnTrue()
+        {
+            QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.INCH, 12);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.FEET, 1);
+            bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
+            Assert.IsTrue(result);
+        }
+
+        /// <summary>
+        /// TC 1.18- comparison check for three feet and one yard.
+        /// </summary>
+        [Test]
+        public void GivenQuantity_WhenThreeFeetValueCompareWithOneYardValue_ShouldReturnTrue()
+        {
+            QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.FEET, 3);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.YARD, 1);
+            bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
+            Assert.IsTrue(result);
+        }
     }
 }
