@@ -451,5 +451,18 @@ namespace QuantityMeasurementTest
             bool result = quantityMeasurement.EqualtyCheck(unit3, unit5);
             Assert.IsTrue(result);
         }
+
+        /// <summary>
+        /// TC 1.33- comparison check for one kg and thousand gm.
+        /// </summary>
+        [Test]
+        public void GivenQuantity_WhenOneKGValueCompareWithThousandGMValue_ShouldReturnTrue()
+        {
+            QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.KG), 1);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.GM), 1000);
+            bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
+            Assert.IsTrue(result);
+        }
     }
 }

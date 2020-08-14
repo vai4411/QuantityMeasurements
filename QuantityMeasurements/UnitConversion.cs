@@ -21,6 +21,8 @@ namespace QuantityMeasurements
             GALLON,
             LITRE,
             ML,
+            KG,
+            GM,
         }
 
         public static double GetQuantityValue(Units unit)
@@ -40,6 +42,10 @@ namespace QuantityMeasurements
                 case Units.LITRE:
                     return 1;
                 case Units.ML:
+                    return 0.001;
+                case Units.KG:
+                    return 1;
+                case Units.GM:
                     return 0.001;
             }
             return 0.0;
