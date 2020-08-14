@@ -31,5 +31,32 @@ namespace QuantityMeasurementTest
             QuantityMeasurement quantity = new QuantityMeasurement();
             Assert.IsFalse(quantity.EqualtyCheck(new Feet(0), new Feet(0)));
         }
+
+        public void GivenQuantity_WhenFeetTypeCompareWithFeetType_ShouldReturnTrue()
+        {
+            QuantityMeasurement quantity = new QuantityMeasurement();
+            Assert.IsTrue(quantity.EqualtyCheck(new Feet(0), new Feet(0)));
+        }
+
+        [Test]
+        public void GivenQuantity_WhenTenFeetValueCompareWithTenFeetValue_ShouldReturnTrue()
+        {
+            QuantityMeasurement quantity = new QuantityMeasurement();
+            Assert.IsTrue(quantity.EqualtyCheck(new Feet(10), new Feet(10)));
+        }
+
+        [Test]
+        public void GivenQuantity_WhenTenFeetValueCompareWithZeoFeetValue_ShouldReturnFalse()
+        {
+            QuantityMeasurement quantity = new QuantityMeasurement();
+            Assert.IsFalse(quantity.EqualtyCheck(new Feet(0), new Feet(10)));
+        }
+
+        [Test]
+        public void GivenQuantity_WhenZeroInchCompareWithZeroInch_ThenReturnTrue()
+        {
+            QuantityMeasurement quantity = new QuantityMeasurement();
+            Assert.IsTrue(quantity.EqualtyCheck(new Inch(0), new Inch(0)));
+        }
     }
 }
