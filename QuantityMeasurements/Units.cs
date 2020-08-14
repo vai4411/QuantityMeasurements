@@ -20,9 +20,14 @@ namespace QuantityMeasurements
                 return true;
             }
 
-            if (obj == null || this.GetType() != obj.GetType())
+            if (obj == null)
             {
                 return false;
+            }
+
+            if (this.GetType() == obj.GetType())
+            {
+                return this.GetType() == obj.GetType();
             }
 
             Units units = (Units)obj;
