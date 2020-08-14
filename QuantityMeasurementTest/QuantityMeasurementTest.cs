@@ -262,7 +262,20 @@ namespace QuantityMeasurementTest
             QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.FEET, 1);
             QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.YARD, 1);
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
-            Assert.IsTrue(result);
+            Assert.IsFalse(result);
+        }
+
+        /// <summary>
+        /// TC 1.18- comparison check for one inch and one yard.
+        /// </summary>
+        [Test]
+        public void GivenQuantity_WhenOneInchValueCompareWithOneYardValue_ShouldReturnFalse()
+        {
+            QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.INCH, 1);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.YARD, 1);
+            bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
+            Assert.IsFalse(result);
         }
     }
 }
