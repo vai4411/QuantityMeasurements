@@ -18,6 +18,9 @@ namespace QuantityMeasurements
             INCH,
             YARD,
             CM,
+            GALLON,
+            LITRE,
+            ML,
         }
 
         public static double GetQuantityValue(Units unit)
@@ -32,6 +35,12 @@ namespace QuantityMeasurements
                     return 36;
                 case Units.CM:
                     return 0.4;
+                case Units.GALLON:
+                    return 3.78;
+                case Units.LITRE:
+                    return 1;
+                case Units.ML:
+                    return 0.001;
             }
             return 0.0;
         }

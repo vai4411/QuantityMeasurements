@@ -393,5 +393,18 @@ namespace QuantityMeasurementTest
             bool result = quantityMeasurement.EqualtyCheck(unit3, unit5);
             Assert.IsTrue(result);
         }
+
+        /// <summary>
+        /// TC 1.29- comparison check for one gallon and three point seventy eight litre.
+        /// </summary>
+        [Test]
+        public void GivenQuantity_WhenOneGallonValueCompareWithThreePointSeventyEightLitreValue_ShouldReturnTrue()
+        {
+            QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.GALLON), 1);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.LITRE), 3.78);
+            bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
+            Assert.IsTrue(result);
+        }
     }
 }
