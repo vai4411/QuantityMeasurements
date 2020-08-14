@@ -354,8 +354,24 @@ namespace QuantityMeasurementTest
         {
             QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
             QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), 1);
-            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 2);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), 1);
             QuantityUnits unit3 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 14);
+            double unit4 = quantityMeasurement.AddQuantityUnits(unit1, unit2);
+            QuantityUnits unit5 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), unit4);
+            bool result = quantityMeasurement.EqualtyCheck(unit3, unit5);
+            Assert.IsTrue(result);
+        }
+
+        /// <summary>
+        /// TC 1.27- comparison check for twenty four inch with addition of one feet and one feet.
+        /// </summary>
+        [Test]
+        public void GivenQuantity_WhenTwentyFourInchValueCompareWithAdditionOfOneFeetAndOneFeetValue_ShouldReturnTrue()
+        {
+            QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), 1);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), 1);
+            QuantityUnits unit3 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), 24);
             double unit4 = quantityMeasurement.AddQuantityUnits(unit1, unit2);
             QuantityUnits unit5 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.INCH), unit4);
             bool result = quantityMeasurement.EqualtyCheck(unit3, unit5);
