@@ -6,22 +6,32 @@ namespace QuantityMeasurements
 {
     public class Units
     {
-        private int length;
+        private int quantity;
 
-        public Units(int length)
+        public Units(int quantity)
         {
-            this.length = length;
+            this.quantity = quantity;
         }
 
         public override bool Equals(object obj)
         {
-            return obj is Units units &&
-                   length == units.length;
+            if (this == obj)
+            {
+                return true;
+            }
+
+            if (obj == null || this.GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            Units units = (Units)obj;
+            return this.quantity == units.quantity;
         }
 
         public override int GetHashCode()
         {
-            return -1136221603 + length.GetHashCode();
+            return -1136221603 + quantity.GetHashCode();
         }
     }
 }
