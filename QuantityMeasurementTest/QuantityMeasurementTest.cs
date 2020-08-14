@@ -290,5 +290,18 @@ namespace QuantityMeasurementTest
             bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
             Assert.IsTrue(result);
         }
+
+        /// <summary>
+        /// TC 1.21- comparison check for thirtysix inch and one yard.
+        /// </summary>
+        [Test]
+        public void GivenQuantity_WhenThirtySixInchValueCompareWithOneYardValue_ShouldReturnTrue()
+        {
+            QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.INCH, 36);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.YARD, 1);
+            bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
+            Assert.IsTrue(result);
+        }
     }
 }
