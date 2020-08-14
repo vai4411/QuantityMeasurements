@@ -23,6 +23,7 @@ namespace QuantityMeasurements
             ML,
             KG,
             GM,
+            TONNE,
         }
 
         public static double GetQuantityValue(Units unit)
@@ -47,6 +48,8 @@ namespace QuantityMeasurements
                     return 1;
                 case Units.GM:
                     return 0.001;
+                case Units.TONNE:
+                    return 1000;
             }
             return 0.0;
         }
