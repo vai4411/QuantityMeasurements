@@ -493,5 +493,19 @@ namespace QuantityMeasurementTest
             bool result = quantityMeasurement.EqualtyCheck(unit3, unit5);
             Assert.IsTrue(result);
         }
+
+        /// <summary>
+        /// TC 1.36- comparison check for two hundred twelve fahrenheit and hundred celsius.
+        /// </summary>
+        [Test]
+        public void GivenQuantity_WhenTwoHundredTwelveFahrenheitValueCompareWithHundredCelsiusValue_ShouldReturnTrue()
+        {
+            QuantityMeasurement quantityMeasurement = new QuantityMeasurement();
+            double temperature = quantityMeasurement.TemperatureConversion(UnitConversion.Units.FAHRENHEIT, 100);
+            QuantityUnits unit1 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.CELSIUS), temperature);
+            QuantityUnits unit2 = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FAHRENHEIT), 212);
+            bool result = quantityMeasurement.EqualtyCheck(unit1, unit2);
+            Assert.IsTrue(result);
+        }
     }
 }

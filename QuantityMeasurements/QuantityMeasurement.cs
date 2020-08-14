@@ -2,6 +2,8 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
+using static QuantityMeasurements.UnitConversion;
+
 namespace QuantityMeasurements
 {
     /// <summary>
@@ -29,6 +31,19 @@ namespace QuantityMeasurements
         public double AddQuantityUnits(QuantityUnits firstQuantity, QuantityUnits secondQuantity)
         {
             return firstQuantity.AddQuantity(secondQuantity);
+        }
+
+        /// <summary>
+        /// This method use for tempreture conversion.
+        /// </summary>
+        /// <param name="unit">Unit type.</param>
+        /// <param name="temperature">Temperature quantity.</param>
+        /// <returns>Temperature value.</returns>
+        public double TemperatureConversion(Units unit, double temperature)
+        {
+            if (unit == Units.FAHRENHEIT)
+                return (temperature * 9 / 5) + 32;
+            return temperature;
         }
     }
 }

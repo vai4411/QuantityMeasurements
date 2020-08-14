@@ -24,6 +24,8 @@ namespace QuantityMeasurements
             KG,
             GM,
             TONNE,
+            CELSIUS,
+            FAHRENHEIT
         }
 
         public static double GetQuantityValue(Units unit)
@@ -50,6 +52,10 @@ namespace QuantityMeasurements
                     return 0.001;
                 case Units.TONNE:
                     return 1000;
+                case Units.CELSIUS:
+                    return 1;
+                case Units.FAHRENHEIT:
+                    return 1;
             }
             return 0.0;
         }
