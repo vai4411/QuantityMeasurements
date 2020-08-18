@@ -25,9 +25,14 @@ namespace QuantityMeasurements
             GM,
             TONNE,
             CELSIUS,
-            FAHRENHEIT
+            FAHRENHEIT,
         }
 
+        /// <summary>
+        /// This method use for get base unit value.
+        /// </summary>
+        /// <param name="unit">Unit enum.</param>
+        /// <returns>Base value.</returns>
         public static double GetQuantityValue(Units unit)
         {
             switch (unit)
@@ -57,6 +62,7 @@ namespace QuantityMeasurements
                 case Units.FAHRENHEIT:
                     return 1;
             }
+
             return 0.0;
         }
     }

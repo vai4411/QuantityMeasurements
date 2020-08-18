@@ -2,10 +2,10 @@
 // Copyright (c) PlaceholderCompany. All rights reserved.
 // </copyright>
 
-using static QuantityMeasurements.UnitConversion;
-
 namespace QuantityMeasurements
 {
+    using static QuantityMeasurements.UnitConversion;
+
     /// <summary>
     /// This is main class of quantity measurement.
     /// </summary>
@@ -41,8 +41,11 @@ namespace QuantityMeasurements
         /// <returns>Temperature value.</returns>
         public double TemperatureConversion(Units unit, double temperature)
         {
-            if (unit == Units.FAHRENHEIT)
+            if (unit == Units.CELSIUS)
+            {
                 return (temperature * 9 / 5) + 32;
+            }
+
             return temperature;
         }
     }
