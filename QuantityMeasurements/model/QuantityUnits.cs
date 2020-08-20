@@ -49,6 +49,11 @@ namespace QuantityMeasurements
             }
 
             QuantityUnits units = (QuantityUnits)obj;
+            if (units.quantity < 0)
+            {
+                throw new QuantityMeasurementException("Quantity should be positive",QuantityMeasurementException.ExceptionType.VALUE_MUST_BE_POSITIVE);
+            }
+
             return this.quantity == units.quantity;
         }
 

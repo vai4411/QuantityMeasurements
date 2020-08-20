@@ -475,5 +475,17 @@ namespace QuantityMeasurementTest
             bool result = this.quantityMeasurement.EqualtyCheck(firstUnit, secondUnit);
             Assert.IsTrue(result);
         }
+
+        /// <summary>
+        /// TC 1.37- negative unit should throw exception.
+        /// </summary>
+        [Test]
+        public void GivenQuantity_WhenUnitIsNegative_ThenThrowException()
+        {
+            QuantityUnits firstUnit = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), -1);
+            QuantityUnits secondUnit = new QuantityUnits((double)UnitConversion.GetQuantityValue(UnitConversion.Units.FEET), -1);
+            var result = Assert.Throws<QuantityMeasurementException>(() => this.quantityMeasurement.EqualtyCheck(firstUnit, secondUnit));
+            Assert.AreEqual(QuantityMeasurementException.ExceptionType.VALUE_MUST_BE_POSITIVE, result.exceptionType);
+        }
     }
 }
